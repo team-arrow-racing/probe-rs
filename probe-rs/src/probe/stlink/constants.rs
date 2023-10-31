@@ -66,6 +66,9 @@ pub mod commands {
     // Parameters for SET_COM_FREQ and GET_COM_FREQ.
     pub const JTAG_STLINK_SWD_COM: u8 = 0x00;
     pub const JTAG_STLINK_JTAG_COM: u8 = 0x01;
+
+    // Bridge command.
+    pub const BRIDGE_CMD: u8 = 0x40;
 }
 
 /// STLink status codes and messages.

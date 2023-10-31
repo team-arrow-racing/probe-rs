@@ -1,3 +1,4 @@
+pub mod bridge;
 pub mod constants;
 pub mod tools;
 mod usb_interface;

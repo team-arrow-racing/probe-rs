@@ -1,4 +1,7 @@
-
+pub mod can;
+pub mod gpio;
+pub mod i2c;
+pub mod spi;
 
 #[derive(clap::Parser)]
 pub struct Cmd {
@@ -10,28 +13,26 @@ pub struct Cmd {
 pub enum Subcommand {
     /// CAN Bus interface control.
     #[clap(name = "can")]
-    Can,
+    Can(can::Cmd),
     /// GPIO interface control.
     #[clap(name = "gpio")]
-    Gpio,
+    Gpio(gpio::Cmd),
     /// I2C interface control.
     #[clap(name = "i2c")]
-    I2c,
+    I2c(i2c::Cmd),
     /// SPI interface control.
     #[clap(name = "spi")]
-    Spi,
+    Spi(spi::Cmd),
 }
 
 impl Cmd {
     pub fn run(self) -> anyhow::Result<()> {
         use Subcommand::*;
         match self.subcommand {
-            Can => println!("CAN Hello World"),
-            Gpio => println!("GPIO Hello World"),
-            I2c => println!("I2C Hello World"),
-            Spi => println!("SPI Hello World"),
+            Can(cmd) => cmd.run(),
+            Gpio(cmd) => cmd.run(),
+            I2c(cmd) => cmd.run(),
+            Spi(cmd) => cmd.run(),
         }
-
-        Ok(())
     }
 }

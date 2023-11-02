@@ -1,5 +1,6 @@
 pub mod attach;
 pub mod benchmark;
+pub mod bridge;
 pub mod cargo_embed;
 pub mod cargo_flash;
 pub mod chip;

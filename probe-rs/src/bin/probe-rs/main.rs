@@ -82,6 +82,8 @@ enum Subcommand {
     Profile(cmd::profile::ProfileCmd),
     Read(cmd::read::Cmd),
     Write(cmd::write::Cmd),
+    /// Bridge
+    Bridge(cmd::bridge::Cmd),
 }
 
 /// Shared options for core selection, shared between commands
@@ -309,6 +311,7 @@ fn main() -> Result<()> {
         Subcommand::Profile(cmd) => cmd.run(),
         Subcommand::Read(cmd) => cmd.run(),
         Subcommand::Write(cmd) => cmd.run(),
+        Subcommand::Bridge(cmd) => cmd.run(),
     };
 
     tracing::info!("Wrote log to {:?}", log_path);

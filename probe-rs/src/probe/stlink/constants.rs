@@ -68,7 +68,7 @@ pub mod commands {
     pub const JTAG_STLINK_JTAG_COM: u8 = 0x01;
 
     // Bridge command.
-    pub const BRIDGE_CMD: u8 = 0x40;
+    pub const BRIDGE: u8 = 0x40;
 }
 
 /// STLink status codes and messages.

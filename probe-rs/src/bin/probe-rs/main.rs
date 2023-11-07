@@ -82,7 +82,7 @@ enum Subcommand {
     Profile(cmd::profile::ProfileCmd),
     Read(cmd::read::Cmd),
     Write(cmd::write::Cmd),
-    /// Bridge
+    /// Use probe CAN/GPIO/I2C/SPI interfaces
     Bridge(cmd::bridge::Cmd),
 }
 

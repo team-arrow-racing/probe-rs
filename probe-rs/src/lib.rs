@@ -88,6 +88,7 @@ mod probe;
 pub mod rtt;
 #[warn(missing_docs)]
 mod session;
+mod bridge;
 
 pub use crate::config::{CoreType, InstructionSet, Target};
 pub use crate::core::{
